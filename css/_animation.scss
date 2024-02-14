@@ -1,0 +1,136 @@
+/* Запускаем анимацию только на десктопе 1200 и больше*/
+
+@media (min-width: 1200px) {
+
+	/* Главный экран картинки */
+	.header__img {
+
+		.header__img--city {
+			opacity: 0;
+			transition: opacity ease-out 1s;
+
+
+			&.show {
+				opacity: 1;
+			}
+		}
+
+		.header__img--sun {
+			transform: translateY(70vh) rotate(180deg) scale(0.5);
+			opacity: 0;
+			transition: all ease-in-out 3s;
+
+			&.show {
+				transform: translateY(0) rotate(0) scale(1);
+				opacity: 1;
+			}
+		}
+
+		.header__img--king {
+			transform: translateY(200px);
+			opacity: 0;
+			transition: transform 0.2s;
+
+			&.show {
+				transform: translateY(0);
+				opacity: 1;
+			}
+		}
+
+		.header__img--queen {
+			transform: translateY(200px);
+			opacity: 0;
+			transition: transform 0.2s;
+
+			&.show {
+				transform: translateY(0);
+				opacity: 1;
+			}
+		}
+
+		.header__img--horse {
+			transform: translateX(100vw);
+			transition: transform ease-out 0.3s;
+
+			&.show {
+				transform: translate(0);
+			}
+		}
+
+		.header__img--pawn {
+			transform: translateX(100vw);
+			transition: transform ease-out 0.3s;
+
+			&.show {
+				transform: translate(0);
+			}
+		}
+	}
+
+	
+	
+	/* Главный экран текст */
+	.header__title,
+	.header__subtitle,
+	.header__button-cnt {
+		opacity: 0;
+		transition: opacity 1s;
+
+		&.show {
+			opacity: 1;
+		}
+	}	
+
+
+	
+	/* Самолет */
+	.stage__container .plane {
+		transform: translateX(100vw);
+		transition: transform ease-out 0.6s;
+
+		&.show {
+			transform: translate(0);
+		}
+	}
+
+	
+	
+	/* Этапы */
+	.item {
+		opacity: 0;
+		transition: opacity 0.6s;
+
+		&.show {
+			opacity: 1;
+		}
+	}
+
+	
+	
+	/* Карточки участников */
+	.participant-card {
+		opacity: 0;
+		transition: opacity 0.6s;
+
+		&.show {
+			opacity: 1;
+		}
+	}
+}
+
+
+
+/* Бегущая строка */
+.ticker--animation {
+	animation: scrolling 25s linear infinite;
+}
+
+@keyframes scrolling {
+	from {
+		transform: translateX(0);
+	}
+
+	to {
+		transform: translateX(calc(-100% - 20px));
+	}
+}
